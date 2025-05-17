@@ -70,6 +70,28 @@ quote = Quote(
 )
 ```
 
+### TokenInfo
+
+The `TokenInfo` class represents basic information about a cryptocurrency token:
+
+```python
+from crypto_commons.types.token_info import TokenInfo
+import datetime
+
+token_info = TokenInfo(
+    id=1,
+    rank=1,
+    name="Bitcoin",
+    symbol="BTC",
+    slug="bitcoin",
+    status=1,
+    is_active=1,
+    first_historical_data=datetime.datetime(2010, 7, 17),
+    last_historical_data=datetime.datetime.now(),
+    platform=None
+)
+```
+
 ## Data Models
 
 ### TokenState
@@ -80,6 +102,15 @@ Represents the complete state of a cryptocurrency token, including:
 - Supply metrics (circulating, total, max supply)
 - Status indicators (is_active, is_fiat)
 - Additional metadata (tags, platform, creation date)
+
+### TokenInfo
+
+Represents basic information about a cryptocurrency token, including:
+- Core identifiers (id, name, symbol, slug)
+- Market rank and status
+- Historical data availability
+- Platform information (for tokens on other blockchains)
+- Active status indicator
 
 ### Quote
 
