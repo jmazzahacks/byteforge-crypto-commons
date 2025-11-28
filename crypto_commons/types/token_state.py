@@ -31,6 +31,7 @@ class TokenState:
         cmc_rank: CoinMarketCap ranking of the token
         self_reported_circulating_supply: Circulating supply as reported by the token team
         self_reported_market_cap: Market cap as reported by the token team
+        minted_market_cap: Market cap based on minted supply
         tvl_ratio: Total Value Locked ratio
         is_market_cap_included_in_calc: Whether this token's market cap is included in total market calculations
         is_active: Whether the token is currently active/trading
@@ -55,6 +56,7 @@ class TokenState:
     cmc_rank: Optional[int] = None
     self_reported_circulating_supply: Optional[int] = None
     self_reported_market_cap: Optional[float] = None
+    minted_market_cap: Optional[float] = None
     tvl_ratio: Optional[float] = None
     is_market_cap_included_in_calc: Optional[bool] = None
     is_active: Optional[bool] = None
