@@ -34,6 +34,7 @@ class Quote:
         volume_7d (Optional[float]): 7-day trading volume.
         total_supply (Optional[float]): Total number of tokens that will ever exist.
         circulating_supply (Optional[float]): Number of tokens currently in circulation.
+        cex_volume_24h (Optional[float]): 24-hour trading volume on centralized exchanges only.
     """
     base_currency: str
     price: float
@@ -60,3 +61,4 @@ class Quote:
     volume_7d: Optional[float] = None
     total_supply: Optional[float] = None
     circulating_supply: Optional[float] = None
+    cex_volume_24h: Optional[float] = None

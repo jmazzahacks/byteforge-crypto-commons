@@ -1,6 +1,6 @@
 [project]
 name = "byteforge-crypto-commons"
-version = "0.3"
+version = "0.4"
 description = "Common models and dependencies for crypto projects."
 readme = "README.md"
 license = { file="LICENSE" }
