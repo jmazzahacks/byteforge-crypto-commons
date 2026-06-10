@@ -27,3 +27,6 @@ Issues = "https://github.com/jmazzahacks/byteforge-crypto-commons/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/crypto_commons"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
