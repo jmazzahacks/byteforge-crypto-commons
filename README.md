@@ -26,6 +26,9 @@ from crypto_commons.types.token_state import TokenState
 from crypto_commons.types.quote import Quote
 import datetime
 
+# Dates/times are stored as unix-timestamp ints (seconds since the epoch)
+now_ts = int(datetime.datetime.now().timestamp())
+
 # Create a quote for USD
 quote = Quote(
     base_currency="USD",
@@ -36,7 +39,7 @@ quote = Quote(
     percent_change_7d=10.0,
     percent_change_30d=20.0,
     market_cap=1000000000000.0,
-    last_updated=datetime.datetime.now()
+    last_updated=now_ts
 )
 
 # Create a token state
@@ -44,7 +47,7 @@ token_state = TokenState(
     id=1,
     name="Bitcoin",
     symbol="BTC",
-    timestamp=int(datetime.datetime.now().timestamp()),
+    timestamp=now_ts,
     quote_map={"USD": quote}
 )
 ```
@@ -66,7 +69,7 @@ quote = Quote(
     percent_change_7d=10.0,
     percent_change_30d=20.0,
     market_cap=1000000000000.0,
-    last_updated=datetime.datetime.now()
+    last_updated=int(datetime.datetime.now().timestamp())  # unix timestamp
 )
 ```
 
@@ -86,8 +89,8 @@ token_info = TokenInfo(
     slug="bitcoin",
     status=1,
     is_active=1,
-    first_historical_data=datetime.datetime(2010, 7, 17),
-    last_historical_data=datetime.datetime.now(),
+    first_historical_data=int(datetime.datetime(2010, 7, 17).timestamp()),  # unix timestamp
+    last_historical_data=int(datetime.datetime.now().timestamp()),  # unix timestamp
     platform=None
 )
 ```
@@ -121,10 +124,20 @@ Represents market data for a cryptocurrency in a specific currency, including:
 - Supply metrics
 - Additional market statistics
 
+### CryptocurrencyInfo
+
+Rich token metadata (the heavier payload from a cryptocurrency `info` endpoint),
+complementing the lightweight `TokenInfo`. Includes description, logo, tags,
+`date_added` / `date_launched` (unix timestamps), and two nested models:
+- **CryptocurrencyPlatform** — the on-chain platform a token is deployed on
+  (chain identifiers plus the token's contract address); `None` for native L1s
+- **CryptocurrencyUrls** — categorized URL bundle (website, explorer, source
+  code, social, etc.)
+
 ## Requirements
 
 - Python 3.8 or higher
-- python-dateutil
+- No third-party dependencies (stdlib only)
 
 ## License
 
