@@ -1,6 +1,5 @@
 from dataclasses import dataclass
 from typing import Optional
-import datetime
 
 @dataclass
 class Quote:
@@ -19,7 +18,7 @@ class Quote:
         percent_change_7d (float): Price change percentage over the last 7 days.
         percent_change_30d (float): Price change percentage over the last 30 days.
         market_cap (float): Total market capitalization of the cryptocurrency.
-        last_updated (datetime.datetime): Timestamp of when this quote was last updated.
+        last_updated (int): Unix timestamp of when this quote was last updated.
         volume_change_24h (float): Change in 24-hour volume compared to previous period.
         percent_change_60d (float): Price change percentage over the last 60 days.
         percent_change_90d (float): Price change percentage over the last 90 days.
@@ -44,7 +43,7 @@ class Quote:
     percent_change_7d: float
     percent_change_30d: float
     market_cap: float
-    last_updated: datetime.datetime
+    last_updated: int  # unix timestamp
 
     # Now all optional/default parameters follow
     volume_change_24h: float = 0.0

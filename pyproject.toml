@@ -1,6 +1,6 @@
 [project]
 name = "byteforge-crypto-commons"
-version = "0.4"
+version = "0.5"
 description = "Common models and dependencies for crypto projects."
 readme = "README.md"
 license = { file="LICENSE" }
@@ -14,9 +14,7 @@ classifiers = [
 authors = [
   { name = "Jason Byteforge"}
 ]
-dependencies = [
-  "python-dateutil"
-]
+dependencies = []
 
 [build-system]
 requires = ["hatchling"]

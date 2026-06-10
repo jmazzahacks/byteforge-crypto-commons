@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from datetime import datetime
 from typing import Optional
 
 @dataclass
@@ -11,6 +10,6 @@ class TokenInfo:
     slug: str
     status: int
     is_active: Optional[int] = None
-    first_historical_data: Optional[datetime] = None
-    last_historical_data: Optional[datetime] = None
+    first_historical_data: Optional[int] = None  # unix timestamp
+    last_historical_data: Optional[int] = None  # unix timestamp
     platform: Optional[str] = None

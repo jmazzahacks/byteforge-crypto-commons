@@ -1,6 +1,5 @@
 from dataclasses import dataclass
 from typing import Dict, List, Optional
-import datetime
 from .quote import Quote
 
 @dataclass
@@ -42,12 +41,12 @@ class TokenState:
     symbol: str
     timestamp: int  # The specific moment in time this token state represents
     quote_map: Dict[str, Quote]
-    last_updated: Optional[datetime.datetime] = None  # When this data was last updated in source system
+    last_updated: Optional[int] = None  # unix timestamp: when this data was last updated in source system
 
     infinite_supply: bool = None
     slug: Optional[str] = None
     num_market_pairs: Optional[int] = None
-    creation_date: Optional[datetime.datetime] = None  # When the token was first created/launched (e.g. Bitcoin's genesis block)
+    creation_date: Optional[int] = None  # unix timestamp: when the token was first created/launched (e.g. Bitcoin's genesis block)
     tags: Optional[List[str]] = None
     max_supply: Optional[int] = None
     circulating_supply: Optional[int] = None
