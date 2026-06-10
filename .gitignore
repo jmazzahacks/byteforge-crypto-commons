@@ -8,3 +8,4 @@ pyvenv.cfg
 main.py
 build_publish.sh
 dist
+CLAUDE.md
